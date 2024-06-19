@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="hHh lpR fFf">
+    <q-layout view="hHh lpR fFf">
     <q-header elevated class="text-white" style="background-color: #26355D;">
       <q-toolbar>
         <q-toolbar-title class="text-center">
@@ -71,14 +71,17 @@ export default {
 </script>
 
 <style scoped>
+
+
+
 .weather {
-  width: 100vw; /* Lebar 100% dari viewport width */
-  height: 100vh; /* Tinggi 100% dari viewport height */
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-image: url('src/assets/raisa.jpg'); /* Menambahkan gambar latar belakang */
+  background-image: url('src/assets/raisa.jpg'); 
   background-size: cover; /* Mengubah ukuran gambar untuk menutupi seluruh elemen */
   background-position: center; /* Memposisikan gambar di tengah */
   background-repeat: no-repeat; /* Jangan ulangi gambar */
