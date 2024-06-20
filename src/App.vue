@@ -1,5 +1,5 @@
 <template>
-    <q-layout view="hHh lpR fFf">
+  <q-layout view="hHh lpR fFf">
     <q-header elevated class="text-white" style="background-color: #26355D;">
       <q-toolbar>
         <q-toolbar-title class="text-center">
@@ -71,9 +71,6 @@ export default {
 </script>
 
 <style scoped>
-
-
-
 .weather {
   width: 100vw;
   height: 100vh;
@@ -81,38 +78,38 @@ export default {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-image: url('src/assets/raisa.jpg'); 
-  background-size: cover; /* Mengubah ukuran gambar untuk menutupi seluruh elemen */
-  background-position: center; /* Memposisikan gambar di tengah */
-  background-repeat: no-repeat; /* Jangan ulangi gambar */
+  background-image: url('/raisa.jpg'); /* Ubah path ke gambar */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: 20px;
   box-sizing: border-box;
-  font-family: Calibri, 'Segoe UI', Arial, sans-serif; /* Ganti font family ke Calibri */
+  font-family: Calibri, 'Segoe UI', Arial, sans-serif;
 }
 
 .weather-title {
-  text-transform: uppercase; /* Mengubah teks menjadi kapital besar */
-  font-size: 2.5rem; /* Ukuran font h1 */
-  margin-bottom: 20px; /* Jarak bawah */
-  color: white; /* Warna teks h1 */
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: white;
 }
 
 form {
   margin-bottom: 20px;
-  text-align: center; /* Pusatkan form secara horizontal */
+  text-align: center;
 }
 
 input {
-  padding: 6px; /* Tingkatkan padding untuk memperbesar input */
-  font-size: 1.5rem; /* Ukuran font input */
+  padding: 6px;
+  font-size: 1.5rem;
   margin-right: 10px;
   border: 1px solid rgb(243, 234, 234);
   border-radius: 4px;
 }
 
 button {
-  padding: 6px; /* Tingkatkan padding untuk memperbesar button */
-  font-size: 1.5rem; /* Ukuran font button */
+  padding: 6px;
+  font-size: 1.5rem;
   background-color: #42aee4;
   border: none;
   color: white;
@@ -128,20 +125,18 @@ button:hover {
   margin-top: 20px;
 }
 
-/* Kotak Hasil Cuaca */
 .weather-box {
-  background-color: rgba(255, 255, 255, 0.3); /* Warna latar belakang lebih transparan */
-  padding: 20px; /* Padding di dalam kotak */
-  border-radius: 8px; /* Sudut tumpul */
-  text-align: center; /* Teks di tengah */
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */ /* Bayangan lembut - Ini dihapus */
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
 }
 
 .weather-data {
-  color: #26355D; /* Warna teks dalam kotak */
+  color: #26355D;
   font-family: Calibri, 'Segoe UI', Arial, sans-serif;
-  font-size: 1.8rem; /* Ukuran font h4 */
-  margin: 5px 0; /* Jarak antar paragraf */
+  font-size: 1.8rem;
+  margin: 5px 0;
 }
 
 .error {
