@@ -5,6 +5,26 @@
         <q-toolbar-title class="text-center">
           <h3 style="font-family: Calibri, 'Segoe UI', Arial, sans-serif; color: white; font-weight: 700;">Weather Today</h3>
         </q-toolbar-title>
+        
+        <!-- q-btn-dropdown for Tugas 1-7 -->
+        <q-btn-dropdown
+          flat
+          dense
+          color="white"
+          icon="menu"
+          label="Tugas 1-7"
+          class="q-ml-auto"
+          style="color: white;"
+        >
+          <q-list>
+            <q-item v-for="(tugas, index) in tugasLinks" :key="index" clickable v-ripple @click="goToLink(tugas.link)">
+              <q-item-section>
+                <q-item-label>{{ tugas.name }}</q-item-label>
+              </q-item-section>
+            </q-item>
+          </q-list>
+        </q-btn-dropdown>
+
       </q-toolbar>
     </q-header>
 
@@ -31,6 +51,7 @@
   </q-layout>
 </template>
 
+
 <script>
 import axios from 'axios';
 
@@ -42,6 +63,15 @@ export default {
       loading: false,
       error: null,
       apiKey: '2e654253096d24edabbd2498fdf6489d', // Ganti dengan API key Anda dari OpenWeatherMap
+      tugasLinks: [
+        { name: 'Tugas 1', link: 'https://raisa-projectcv.netlify.app/' },
+        { name: 'Tugas 2', link: 'https://t2-pbk-223510790.netlify.app/' },
+        { name: 'Tugas 3', link: 'https://raisa-tugas3pbk.netlify.app/' },
+        { name: 'Tugas 4', link: 'https://tugas4-pbk-raisa.netlify.app/' },
+        { name: 'Tugas 5', link: 'https://t5-pbk-223510790.netlify.app/' },
+        { name: 'Tugas 6', link: 'https://t6-pbk-223510790.netlify.app/' },
+        { name: 'Tugas 7', link: 'https://link-to-tugas-7' },
+      ],
     };
   },
   methods: {
@@ -66,9 +96,13 @@ export default {
         }
       }
     },
+    goToLink(link) {
+      window.open(link, '_blank');
+    },
   },
 };
 </script>
+
 
 <style scoped>
 .weather {
