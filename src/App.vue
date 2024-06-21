@@ -12,7 +12,7 @@
           dense
           color="white"
           icon="menu"
-          label="Tugas 1-7"
+          label="Tugas 1-6"
           class="q-ml-auto"
           style="color: white;"
         >
@@ -70,7 +70,6 @@ export default {
         { name: 'Tugas 4', link: 'https://tugas4-pbk-raisa.netlify.app/' },
         { name: 'Tugas 5', link: 'https://t5-pbk-223510790.netlify.app/' },
         { name: 'Tugas 6', link: 'https://t6-pbk-223510790.netlify.app/' },
-        { name: 'Tugas 7', link: 'https://link-to-tugas-7' },
       ],
     };
   },
