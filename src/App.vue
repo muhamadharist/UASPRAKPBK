@@ -1,9 +1,9 @@
 <template>
   <q-layout view="hHh lpR fFf">
-    <q-header elevated class="text-white" style="background-color: #26355D;">
+    <q-header elevated class="text-white" style="background-color: #1E2A38;">
       <q-toolbar>
         <q-toolbar-title class="text-center">
-          <h3 style="font-family: Calibri, 'Segoe UI', Arial, sans-serif; color: white; font-weight: 700;">Weather Today</h3>
+          <h3 style="font-family: 'Roboto Slab', serif; color: white; font-weight: 700;">Weather Today</h3>
         </q-toolbar-title>
         
         <!-- q-btn-dropdown for Tugas 1-7 -->
@@ -24,19 +24,19 @@
             </q-item>
           </q-list>
         </q-btn-dropdown>
-
+        
       </q-toolbar>
     </q-header>
 
     <q-page-container>
       <div class="weather">
-        <h1 class="weather-title"></h1>
+        <h1 class="weather-title">Get Current Weather</h1>
         <form @submit.prevent="fetchWeather">
-          <input v-model="city" placeholder="Enter city name" required style="font-size: 1.5rem; padding: 6px; font-family: Calibri, 'Segoe UI', Arial, sans-serif;" />
-          <button type="submit" style="font-size: 1.5rem; padding: 6px;">Get Weather</button>
+          <input v-model="city" placeholder="Enter city name" required class="weather-input" />
+          <button type="submit" class="weather-button">Get Weather</button>
         </form>
-        <div v-if="loading" style="color: white; font-family: Calibri, 'Segoe UI', Arial, sans-serif;">Loading...</div>
-        <div v-if="error" class="error" style="color: red; font-family: Calibri, 'Segoe UI', Arial, sans-serif;">{{ error }}</div>
+        <div v-if="loading" class="loading">Loading...</div>
+        <div v-if="error" class="error">{{ error }}</div>
         
         <!-- Kotak Hasil Cuaca -->
         <div v-if="weather && !error" class="weather-box">
@@ -51,7 +51,6 @@
   </q-layout>
 </template>
 
-
 <script>
 import axios from 'axios';
 
@@ -64,12 +63,11 @@ export default {
       error: null,
       apiKey: '2e654253096d24edabbd2498fdf6489d', // Ganti dengan API key Anda dari OpenWeatherMap
       tugasLinks: [
-        { name: 'Tugas 1', link: 'https://raisa-projectcv.netlify.app/' },
-        { name: 'Tugas 2', link: 'https://t2-pbk-223510790.netlify.app/' },
-        { name: 'Tugas 3', link: 'https://raisa-tugas3pbk.netlify.app/' },
-        { name: 'Tugas 4', link: 'https://tugas4-pbk-raisa.netlify.app/' },
-        { name: 'Tugas 5', link: 'https://t5-pbk-223510790.netlify.app/' },
-        { name: 'Tugas 6', link: 'https://t6-pbk-223510790.netlify.app/' },
+        { name: 'Tugas 1', link: 'https://muhamadharist.netlify.app/' },
+        { name: 'Tugas 2', link: 'https://loquacious-banoffee-0be42c.netlify.app/' },
+        { name: 'Tugas 3', link: 'https://muhamadharistsamudradililla-pbk.netlify.app/' },
+        { name: 'Tugas 4', link: 'https://m-harist-samudra-d-ililla-tugas4prak-pbk.vercel.app/' },
+        { name: 'Tugas 6', link: 'https://tugas6-parak-pbk.vercel.app/' },
       ],
     };
   },
@@ -102,7 +100,6 @@ export default {
 };
 </script>
 
-
 <style scoped>
 .weather {
   width: 100vw;
@@ -111,18 +108,16 @@ export default {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-image: url('/raisa.jpg'); /* Ubah path ke gambar */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: linear-gradient(135deg, #1E2A38 0%, #3A506B 100%);
   padding: 20px;
   box-sizing: border-box;
-  font-family: Calibri, 'Segoe UI', Arial, sans-serif;
+  font-family: 'Roboto Slab', serif;
+  color: white;
 }
 
 .weather-title {
   text-transform: uppercase;
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 20px;
   color: white;
 }
@@ -132,43 +127,49 @@ form {
   text-align: center;
 }
 
-input {
-  padding: 6px;
-  font-size: 1.5rem;
+.weather-input {
+  padding: 10px;
+  font-size: 1.2rem;
   margin-right: 10px;
-  border: 1px solid rgb(243, 234, 234);
+  border: 1px solid #ddd;
   border-radius: 4px;
+  font-family: 'Roboto Slab', serif;
+  background-color: white;
 }
 
-button {
-  padding: 6px;
-  font-size: 1.5rem;
-  background-color: #42aee4;
+.weather-button {
+  padding: 10px;
+  font-size: 1.2rem;
+  background-color: #1E2A38;
   border: none;
   color: white;
   border-radius: 4px;
   cursor: pointer;
+  font-family: 'Roboto Slab', serif;
+  transition: background-color 0.3s;
 }
 
-button:hover {
-  background-color: #0056b3;
+.weather-button:hover {
+  background-color: #3A506B;
 }
 
-.weather div {
-  margin-top: 20px;
+.loading {
+  color: #4A90E2;
+  font-family: 'Roboto Slab', serif;
 }
 
 .weather-box {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
   padding: 20px;
   border-radius: 8px;
   text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .weather-data {
-  color: #26355D;
-  font-family: Calibri, 'Segoe UI', Arial, sans-serif;
-  font-size: 1.8rem;
+  color: white;
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.5rem;
   margin: 5px 0;
 }
 
